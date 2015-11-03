@@ -439,3 +439,12 @@ body {
     -webkit-tap-highlight-color: $theme-dark;
 }
 
+.node {
+  stroke: #fff;
+  stroke-width: 2.5px;
+}
+
+.link {
+  fill: none;
+  stroke: #bbb;
+}
