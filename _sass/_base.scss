@@ -161,7 +161,7 @@ aside {
             color: #F05F40;
             &:hover,
             &:focus {
-                color: black;
+                color: #fff;
             }
         }
         .nav > li > a,
@@ -447,4 +447,7 @@ body {
 .link {
   fill: none;
   stroke: #bbb;
+}
+#graph svg {
+    width: 100% !important;
 }

@@ -1,5 +1,5 @@
-var width = 500,
-    height = 500;
+var width = $("#graph").width(),
+    height = $("#graph").width();
 
 var color = d3.scale.category20();
 
