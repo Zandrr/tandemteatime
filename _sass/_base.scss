@@ -36,6 +36,14 @@ h6 {
     @include sans-serif-font;
 }
 
+.primary-color {
+  color: $theme-primary;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
 p {
     font-size: 16px;
     line-height: 1.5;
@@ -52,7 +60,7 @@ p {
 }
 
 .text-faded {
-    color: rgba(white, .7);
+    color: rgb(245, 245, 245);
 }
 
 section {
@@ -67,11 +75,50 @@ aside {
     padding: 0;
 }
 
+.subtle-link {
+  color: $theme-primary;
+  display: inherit;
+  text-transform: uppercase;
+  padding-top: 15px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-decoration: none;
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+
+
+  &:hover {
+    text-decoration: none;
+    color: #FFF;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+
+  i {
+    vertical-align: text-top;
+    display:block;
+    font-size: 5em
+  }
+}
+
+.header-content-inner{
+    .btn-default{
+        &:hover{
+            background-color: $theme-primary;
+            color: #fff;
+        }
+    }
+}
+
 // Navigation
 
 .navbar-default {
+    border: none;
     background-color: white;
-    border-color: rgba($theme-dark, .5);
     @include sans-serif-font;
     @include transition-all;
     .navbar-header .navbar-brand {
@@ -110,19 +157,18 @@ aside {
     }
     @media (min-width: 768px) {
         background-color: transparent;
-        border-color: rgba(white, .3);
         .navbar-header .navbar-brand {
             color: #F05F40;
             &:hover,
             &:focus {
-                color: black;
+                color: #fff;
             }
         }
         .nav > li > a,
         .nav > li > a:focus {
             color: $theme-primary;
             &:hover {
-                color: black;
+                color: white;
             }
         }
         &.affix {
@@ -152,43 +198,58 @@ aside {
 header {
     position: relative;
     width: 100%;
-    min-height: auto;
+    min-height: 95%;
     @include background-cover;
     background-position: center;
-    background-image: url('../img/header.jpg');
+    background-image: url('../img/hero.jpg');
     text-align: center;
-    color: black;
+    color: white;
     .header-content {
+        z-index: 2;
         position: relative;
         text-align: center;
-        padding: 100px 15px 100px;
+        padding: 100px 15px 150px;
         width: 100%;
         .header-content-inner {
             h1 {
-                font-weight: 700;
+                font-weight: 500;
                 text-transform: uppercase;
                 margin-top: 0;
                 margin-bottom: 0;
+            }
+            h3 {
+                margin-top: 10px;
+                text-transform: uppercase;
+                font-weight: 200;
             }
             hr {
                 margin: 30px auto;
             }
             p {
                 font-weight: 300;
-                font-size: 16px;
+                font-size: 21px;
                 margin-bottom: 50px;
             }
         }
     }
+    &:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: "";
+      background-color: rgba(0, 0, 0, 0.5);
+    }
     @media (min-width: 768px) {
-        min-height: 100%;
+        min-height: 95%;
         .header-content {
             position: absolute;
             top: 50%;
             -webkit-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-            padding: 0 50px;
+            padding: 0 50px 150px;
             .header-content-inner {
                 max-width: 1000px;
                 margin-left: auto;
@@ -218,6 +279,8 @@ header {
     }
     p {
         margin-bottom: 0;
+        width: 60%;
+        margin: auto;
     }
 }
 
@@ -305,7 +368,6 @@ header {
 .btn {
     @include sans-serif-font;
     border: none;
-    border-radius: 300px;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -318,6 +380,35 @@ header {
 #contact .fa {
     color: $theme-dark;
     font-size: 4em;
+}
+
+.form-group {
+  padding-right: 10px;
+
+  .form-control {
+    padding: 0.94em 0.8em;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px #d9d9d9;
+    color: #333;
+    -webkit-appearance: none;
+    line-height: normal;
+    transition: all 0.2s ease-out;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $theme-primary;
+      outline: none;
+    }
+  }
+}
+
+#connect {
+  padding-bottom: 0;
+}
+
+footer {
+  padding-top: 0;
+  padding-bottom: 100px;
 }
 
 // Extras
@@ -348,3 +439,15 @@ body {
     -webkit-tap-highlight-color: $theme-dark;
 }
 
+.node {
+  stroke: #fff;
+  stroke-width: 2.5px;
+}
+
+.link {
+  fill: none;
+  stroke: #bbb;
+}
+#graph svg {
+    width: 100% !important;
+}

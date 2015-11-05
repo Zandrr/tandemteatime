@@ -16,3 +16,4 @@
 # Compiled Assets Ignores
 .sass-cache
 .jekyll-metadata
+_site
