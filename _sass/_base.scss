@@ -448,6 +448,19 @@ body {
   fill: none;
   stroke: #bbb;
 }
-#graph svg {
-    width: 100% !important;
+
+@media screen and(min-width: 0px) and(max-width: 766px) {
+    #graph {
+        display: none;
+    }
 }
+@media screen and(min-width: 767px) and(max-width: 1024px) {
+    #graph {
+        display: block;
+    }
+    #graph svg {
+        width: 100% !important;
+    }
+}
+
+
